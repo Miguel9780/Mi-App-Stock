@@ -5,7 +5,7 @@ from datetime import datetime
 st.set_page_config(page_title="Control de Stock", page_icon="📦", layout="wide")
 st.title("📊 Análisis de Quiebre de Stock")
 
-archivo = st.file_uploader("Cargar Reporte de Stock", type=["xlsx"])
+archivo = "datos_stock.xlsx"
 
 if archivo:
     try:
