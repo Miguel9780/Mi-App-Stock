@@ -80,7 +80,7 @@ if os.path.exists(NOMBRE_ARCHIVO):
                         st.warning(f"⚪ {res[col_desc]}: Producto descontinuado o sin plan.")
                     else:
                         # --- CÁLCULOS SEGÚN NUEVOS REQUERIMIENTOS ---
-                        # Mejora 3: Venta Diaria Objetiva (Plan / 30)
+                        # Mejora 3: Venta Diaria Teórica Objetiva (Plan / 30)
                         venta_diaria_calculo = plan_mes_h / DIAS_TOTALES
                         stock_min_req = venta_diaria_calculo * dias_restantes
                         
@@ -100,7 +100,7 @@ if os.path.exists(NOMBRE_ARCHIVO):
                             # Mejora 1: Visualización del nuevo cálculo
                             st.metric("Avance Vta. (K+R)", f"{int(total_avance_kr):,}")
                             # Mejora 3: Visualización de la nueva métrica
-                            st.metric("Venta Diaria (H/30)", f"{venta_diaria_calculo:.2f}")
+                            st.metric("Venta Diaria Teórica (H/30)", f"{venta_diaria_calculo:.2f}")
 
                         with m2:
                             st.metric("%V Mes Actual (M)", f"{porc_vta_m:.2%}" if not pd.isna(porc_vta_m) else "0.00%")
